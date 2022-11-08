@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ElevatorsSystemActivity">
+
+    <TextView
+        android:id="@+id/elevatorHandlerTitle_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elevator Handler"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <LinearLayout
+        android:id="@+id/chooseElevator_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#DC00B0FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/elevatorHandlerTitle_textView">
+
+        <TextView
+            android:id="@+id/chooseElevator_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose elevator:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/elevatorsList_Spinner" />
+
+        <Spinner
+            android:id="@+id/elevatorsList_Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/pickup_TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toEndOf="@id/chooseElevator_TextView"
+            app:layout_constraintTop_toBottomOf="@+id/elevatorHandlerTitle_textView"
+            app:layout_constraintVertical_bias="0.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pickupElevator_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:background="#DC00B0FF"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/movementControlls_Layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/movementControlls_Layout">
+
+        <TextView
+            android:id="@+id/pickup_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Pickup elevator from :"
+            android:textSize="20sp" />
+
+        <NumberPicker
+            android:id="@+id/floor_numberPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/pickup_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2366D6"
+            android:padding="10dp"
+            android:text="Pickup"
+            app:layout_constraintEnd_toEndOf="@id/pickup_TextView" />
+
+        <Button
+            android:id="@+id/closeDoors_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2366D6"
+            android:text="close doors" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/movementControlls_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#DC00B0FF"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseElevator_Layout"
+        app:layout_constraintVertical_bias="0.1">
+
+        <ImageView
+            android:id="@+id/upArrow_imageView"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/up_arrow"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/floorInformation_TextView"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/downArrow_imageView"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/down_arrow"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/ElevatorSystemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/elevator_system"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descriptionOfMainActivity_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set amount of floors which elevator will have and add it to list \n You can add max 16 elevators"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/amountOfElevators_NumberPicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ElevatorSystemTitle" />
+
+    <Button
+        android:id="@+id/addnNewElevator_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00E676"
+        android:padding="4dp"
+        android:text="Add elevator"
+        app:layout_constraintEnd_toEndOf="@id/amountOfElevators_NumberPicker"
+        app:layout_constraintStart_toStartOf="@id/amountOfElevators_NumberPicker"
+        app:layout_constraintTop_toBottomOf="@id/amountOfElevators_NumberPicker" />
+
+    <NumberPicker
+        android:id="@+id/amountOfElevators_NumberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ElevatorSystemTitle"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <ListView
+        android:id="@+id/elevators_ListView"
+        android:layout_width="200dp"
+        android:layout_height="450dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/addnNewElevator_Button"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionOfMainActivity_TextView"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <Button
+        android:id="@+id/removeLastItem_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FF1744"
+        android:padding="4dp"
+        android:text="Remove last one"
+        app:layout_constraintEnd_toEndOf="@id/addnNewElevator_Button"
+        app:layout_constraintStart_toStartOf="@id/addnNewElevator_Button"
+        app:layout_constraintTop_toBottomOf="@id/addnNewElevator_Button" />
+
+    <Button
+        android:id="@+id/installElevatorSystem_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="100sp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#00E5FF"
+        android:padding="4dp"
+        android:text="Install Elevator\n System"
+        app:layout_constraintEnd_toEndOf="@+id/removeLastItem_Button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/removeLastItem_Button"
+        app:layout_constraintTop_toBottomOf="@+id/removeLastItem_Button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
