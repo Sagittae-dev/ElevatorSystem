@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 
 public class ElevatorHandler {
     private static final String TAG = "ElevatorHandler";
-    private final int id;
     private final Elevator elevator;
     private final TreeSet<Request> requestsSet = new TreeSet<>();
     private final Context context;
@@ -24,9 +23,8 @@ public class ElevatorHandler {
     private Thread workThread;
     private boolean isCurrentDisplay;
 
-    public ElevatorHandler(Context context, int id, Elevator elevator) {
+    public ElevatorHandler(Context context, Elevator elevator) {
         this.context = context;
-        this.id = id;
         this.elevator = elevator;
         buttons = new boolean[elevator.getNumberOfFloors()];
     }
@@ -205,7 +203,7 @@ public class ElevatorHandler {
         workThread.interrupt();
     }
 
-    public void runElevator() {
+    private void runElevator() {
         if (!elevatorIsEnabled) {
             this.elevatorIsEnabled = true;
             setWorkThread();
@@ -214,6 +212,6 @@ public class ElevatorHandler {
     }
 
     public int getId() {
-        return id;
+        return elevator.getElevatorId();
     }
 }

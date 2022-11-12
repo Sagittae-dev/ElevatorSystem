@@ -1,6 +1,6 @@
 package com.example.elevatorsystem.core;
 
-public class WrongInputException extends Throwable {
+public class WrongInputException extends Exception {
 
     private final String message;
 
