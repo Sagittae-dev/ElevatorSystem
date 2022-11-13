@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         addElevatorToList_Button = findViewById(R.id.addnNewElevator_Button);
         addElevatorToList_Button.setOnClickListener(view -> {
             if (elevators.size() < 15) {
-                elevators.add(new Elevator(elevators.size(), floorsNumberPicker.getValue() - 1));
+                elevators.add(new Elevator(elevators.size(), floorsNumberPicker.getValue()));
                 elevatorsListAdapter.notifyDataSetChanged();
             } else {
                 Toast.makeText(this, "You can add max 16 elevators.", Toast.LENGTH_SHORT).show();

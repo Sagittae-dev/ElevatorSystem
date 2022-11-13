@@ -35,10 +35,10 @@ public class ElevatorHandler {
 
     public void handleRequest(Request request) throws WrongInputException {
         int dest = request.getDestFloor();
-        if (!destFloorIsBetweenCurrentAndPreviousDestFloor()) {
-            buttons = addNewDestFloorToList(dest);
-        } else {
+        if (elevator.getElevatorMovement() == ElevatorMovement.GOINGDOWN || elevator.getElevatorMovement() == ElevatorMovement.GOINGUP) {
             requestsSet.add(request);
+        } else {
+            buttons = addNewDestFloorToList(dest);
         }
         if (!elevatorIsEnabled)
             runElevator();
@@ -150,7 +150,7 @@ public class ElevatorHandler {
         return ElevatorMovement.STATIONARY;
     }
 
-    public void setArrowInActivity(ElevatorMovement elevatorMovement) {
+    public synchronized void setArrowInActivity(ElevatorMovement elevatorMovement) {
         ElevatorsSystemActivity elevatorsSystemActivity = (ElevatorsSystemActivity) context;
         ImageView upArrow = elevatorsSystemActivity.findViewById(R.id.upArrow_imageView);
         ImageView downArrow = elevatorsSystemActivity.findViewById(R.id.downArrow_imageView);
